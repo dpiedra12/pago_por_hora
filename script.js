@@ -32,6 +32,12 @@ function calcular() {
     return;
   }
 
+  if (!soloDigitos.test(destinatario) || destinatario.length !== 8) {
+    document.getElementById("resultado").textContent =
+      "El número de teléfono debe tener 8 dígitos.";
+    return;
+  }
+
   if (!soloDigitos.test(monto)) {
     document.getElementById("resultado").textContent =
       "El monto debe contener solo números.";
