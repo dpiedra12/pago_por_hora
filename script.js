@@ -1,3 +1,18 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const telefonoGuardado = localStorage.getItem("telefono");
+  if (telefonoGuardado) {
+    document.getElementById("telefono").value = telefonoGuardado;
+  }
+  const descripcionGuardada = localStorage.getItem("descripcion");
+  if (descripcionGuardada) {
+    document.getElementById("descripcion").value = descripcionGuardada;
+  }
+  const montoGuardado = localStorage.getItem("monto");
+  if (montoGuardado) {
+    document.getElementById("monto").value = montoGuardado;
+  }
+});
+
 function calcular() {
   const selectBanco = document.getElementById("banco");
   const telefono = selectBanco.value;
@@ -40,6 +55,11 @@ function calcular() {
 
   document.getElementById("total").textContent = `Total: ₡${total}`;
   document.getElementById("resultado").textContent = `Mensaje generado: ${mensaje}`;
+
+  // Guardar valores para futuros usos
+  localStorage.setItem("telefono", document.getElementById("telefono").value);
+  localStorage.setItem("descripcion", descripcion);
+  localStorage.setItem("monto", monto);
 
   const smsLink = `sms:${telefono}?body=${encodeURIComponent(mensaje)}`;
   document.getElementById("smsLink").href = smsLink;
