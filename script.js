@@ -18,7 +18,7 @@ function calcular() {
   const telefono = selectBanco.value;
   const banco = selectBanco.options[selectBanco.selectedIndex].textContent;
 
-  const remitente = "85696483"; // Remitente fijo
+  const destinatario = document.getElementById("telefono").value.trim();
   const descripcion = document.getElementById("descripcion").value.trim();
   const inicio = document.getElementById("horaInicio").value;
   const fin = document.getElementById("horaFin").value;
@@ -38,7 +38,7 @@ function calcular() {
     return;
   }
 
-  if (!inicio || !fin || !descripcion) {
+  if (!inicio || !fin || !descripcion || !destinatario) {
     document.getElementById("resultado").textContent =
       "Por favor ingrese todos los campos.";
     return;
@@ -65,7 +65,7 @@ function calcular() {
 
   const total = Math.round(diffHrs * monto + (diffMins / 60) * monto);
 
-  const mensaje = `PASE ${total} ${remitente} ${descripcion} ${tiempoTotal}`;
+  const mensaje = `PASE ${total} ${destinatario} ${descripcion} ${tiempoTotal}`;
 
   document.getElementById("total").textContent = `Total: ₡${total}`;
   document.getElementById("resultado").textContent = `Mensaje generado: ${mensaje}`;
