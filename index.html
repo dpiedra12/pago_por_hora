@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Horas</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Pago por Horas</h2>
+
+      <label for="telefono">Número de teléfono del destinatario:</label>
+      <input type="tel" id="telefono" value="85696483" />
+
+      <label for="descripcion">Descripción:</label>
+      <input type="text" id="descripcion" value="Limpieza" />
+
+      <label for="monto">Monto por hora:</label>
+      <input type="text" id="monto" value="3000" />
+
+      <label for="banco">Seleccione el banco:</label>
+      <select id="banco" class="bancos">
+        <option value="4066" selected>Banco de Costa Rica</option>
+        <option value="2627">Banco Nacional</option>
+        <option value="247">Banco Popular</option>
+        <option value="70701222">BAC</option>
+      </select>
+
+      <label for="horaInicio">Hora de inicio:</label>
+      <input type="time" id="horaInicio" />
+
+      <label for="horaFin">Hora de fin:</label>
+      <input type="time" id="horaFin" />
+
+      <button onclick="calcular()">Calcular total</button>
+      <div class="total" id="total"></div>
+      <div class="horaMenor" id="horaMenor"></div>
+      <div class="resultado" id="resultado"></div>
+
+      <a href="#" id="smsLink" class="sms-link" target="_blank"
+        >Enviar SINPE Móvil por SMS</a
+      >
+    </div>
+  </body>
+</html>
