@@ -13,7 +13,13 @@
       <h2>Pago por Horas</h2>
 
       <label for="telefono">Número de teléfono del destinatario:</label>
-      <input type="tel" id="telefono" value="85696483" />
+      <input
+        type="tel"
+        id="telefono"
+        value="85696483"
+        pattern="\d{8}"
+        maxlength="8"
+      />
 
       <label for="descripcion">Descripción:</label>
       <input type="text" id="descripcion" value="Limpieza" />
