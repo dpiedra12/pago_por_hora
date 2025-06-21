@@ -24,6 +24,20 @@ function calcular() {
   const fin = document.getElementById("horaFin").value;
   const monto = document.getElementById("monto").value;
 
+  const soloDigitos = /^\d+$/;
+
+  if (!soloDigitos.test(telefono)) {
+    document.getElementById("resultado").textContent =
+      "El teléfono debe contener solo números.";
+    return;
+  }
+
+  if (!soloDigitos.test(monto)) {
+    document.getElementById("resultado").textContent =
+      "El monto debe contener solo números.";
+    return;
+  }
+
   if (!inicio || !fin || !descripcion) {
     document.getElementById("resultado").textContent =
       "Por favor ingrese todos los campos.";
